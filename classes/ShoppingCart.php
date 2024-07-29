@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-// unset($_SESSION["cart"]);
-
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
@@ -29,7 +27,19 @@ class ShoppingCart
                         $product['cant'] = 1;
                         $product['total_price'] = $product['cant'] * $product['price'];
                         array_push($_cart, $product);
-                    } 
+                    } else if($action == 'plus'){
+                        for($k = 0; $k < count($_cart); $k++){
+                            if($_cart[$k]["id"] == $id && $_cart[$k]["cant"] < $product['stock']){
+                                $_cart[$k]["cant"] = $_cart[$k]["cant"]+1;
+                            }
+                        }
+                    } else if($action == 'minus'){
+                        for($k = 0; $k < count($_cart); $k++){
+                            if($_cart[$k]["id"] == $id && $_cart[$k]["cant"] > 0){
+                                $_cart[$k]["cant"] = $_cart[$k]["cant"]-1;
+                            }
+                        }
+                    }
                     $response = true;
                     $_SESSION['cart'] = $_cart;
                 } 

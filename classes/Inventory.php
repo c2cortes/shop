@@ -11,7 +11,6 @@ class Inventory
 
         if(!isset($_SESSION['products'])){
             $_SESSION['products'] = $data['products'];
-            // var_dump($_SESSION['products']);
         }
         
         return $data["products"];
