@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Yogur",
+      "price": 100,
+      "type": "CountableProduct",
+      "stock": 4
+    },
+    {
+      "id": 2,
+      "name": "Leche",
+      "price": 200,
+      "type": "CountableProduct",
+      "stock": 3
+    },
+    {
+      "id": 3,
+      "name": "Manzana",
+      "price": 300,
+      "type": "WeightedProduct",
+      "stock": 2
+    },
+    {
+      "id": 4,
+      "name": "Naranja",
+      "price": 400,
+      "type": "WeightedProduct",
+      "stock": 1
+    }
+  ]
+}
